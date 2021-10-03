@@ -1,0 +1,45 @@
+---
+title: "0930 9am Trial"
+author: "Esther"
+date: "30/09/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Setup
+
+```{r}
+
+options(java.parameters = "-Xmx2G")
+
+library(r5r)
+library(osmextract)
+library(tidyverse)
+library(sf)
+library(ggthemes)
+library(ggspatial)
+library(tigris)
+library(wesanderson)
+library(tidytransit)
+
+```
+## Load Networks
+
+```{r}
+
+dir.create("networks")
+
+download.file("https://cdn.mbta.com/MBTA_GTFS.zip", file.path("networks","MBTAgtfs.zip"), mode = "wb", quiet=TRUE)
+
+BOS_file <- oe_match("Boston")
+
+```
+
+
+
+
+
+
